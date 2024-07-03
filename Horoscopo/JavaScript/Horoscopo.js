@@ -12,9 +12,9 @@ function Consultar(event) {
 	let signo = '';
 
     if (fechaFormato >= '01-21' && fechaFormato <= '02-19') {
-        signo = 'Acuario';
+        signo = '♒️ Acuario';
     } else if (fechaFormato >= '02-20' && fechaFormato <= '03-20') {
-		signo = 'Piscis';
+		signo = '♓️ Piscis';
     } else if (fechaFormato >= '03-21' && fechaFormato <= '04-20') {
 		signo = '♈️ Aries';
 	} else if (fechaFormato >= '04-21' && fechaFormato <= '05-20') {
@@ -34,9 +34,9 @@ function Consultar(event) {
 	} else if (fechaFormato >= '11-23' && fechaFormato <= '12-21') {
 		signo = '♐️ Sagitario';
 	} else if (fechaFormato >= '12-22' || fechaFormato <= '01-20') {
-		signo = 'Capricornio';
+		signo = '♑️ Capricornio';
 	} else {
-		signo = 'Fecha no válida';
+		signo = '❌ Fecha no válida';
 	}
 
     signoTexto.innerHTML = 'Tu signo zodiacal es: ' + signo;
