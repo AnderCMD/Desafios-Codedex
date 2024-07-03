@@ -11,7 +11,7 @@ _La ultima actualizacion fue realizada el dia_ **03-07-2024**
 
 ## Repositorios 📦
 
-- **[Horoscopo](PROXIMAMENTE) |**  Completado el día: **03-07-2024**
+- **[Horoscopo](https://github.com/AnderCMD/Desafios-Codedex/tree/main/Horoscopo) |**  Completado el día: **03-07-2024**
 
 ## Visita los desafios ✈️
 
