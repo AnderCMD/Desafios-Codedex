@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Metas -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titulo & Icono -->
+    <title>AnderCMD | Horóscopo</title>
+    <link rel="shortcut icon" href="../Global/Icons/Icono-Blanco.ico" type="image/x-icon">
+    <!-- Styles -->
+    <link rel="stylesheet" href="./CSS/Estilos.css">
+</head>
+<body>
+    <header>
+        <img src="../Global/Logos/Logo-Blanco.png" alt="Logo de AnderCMD" class="Logo">
+        <h1>Conoce tu Horóscopo</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>♍️ Conoce tu Horóscopo</h2>
+            <form action="" onsubmit="Consultar(event)">
+                <label for="Fecha">Fecha de Nacimiento:</label>
+                <input type="date" id="Fecha" required>
+                <button type="submit">Consultar</button>
+                <br>
+                <h3 id="SignoTexto"></h3>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Creado por <b>AnderCMD</b> | <span>© Copyright 2024</span></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./JavaScript/Horoscopo.js"></script>
+</body>
+</html>
