@@ -15,7 +15,7 @@ _La ultima actualizacion fue realizada el dia_ **03-07-2024**
 
 ## Visita los desafios ✈️
 
-- Desafio completado ✅ **| Horoscopo | [Web Preview](https://andercmd.github.io/Desafios-Codedex/Horoscopo)**
+- Desafio completado ✅ **| Horoscopo | [Web Preview](https://codedex.andercmd.dev/Horoscopo)**
 
 ## Construido con 🛠️
 
