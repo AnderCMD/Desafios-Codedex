@@ -52,15 +52,15 @@ Para desplegar este proyecto en un servidor de producción:
 
 ## Última actualización 🗓️
 
-_La última actualización fue realizada el día_ **03-07-2024**
+ _La última actualización fue realizada el día_ **07-07-2026**
 
 ## Repositorios 📦
 
-- **[Horoscopo](https://github.com/AnderCMD/Desafios-Codedex/tree/main/Horoscopo)** | Completado el día: **03-07-2024**
+- **[Horoscope](https://github.com/AnderCMD/Desafios-Codedex/tree/main/Horoscope)** | Completado el día: **07-07-2026**
 
 ## Visita los desafíos ✈️
 
-- Desafío completado ✅ **| Horoscopo |** [Web Preview](https://codedex.andercmd.dev/Horoscopo)
+- Desafío completado ✅ **| Horoscope |** [Web Preview](https://codedex.andercmd.dev/Horoscope)
 
 ## Construido con 🛠️
 

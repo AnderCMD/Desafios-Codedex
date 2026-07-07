@@ -1,3 +1,45 @@
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../../Global/Fonts/SF-Pro-Display-Thin.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../../Global/Fonts/SF-Pro-Display-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../../Global/Fonts/SF-Pro-Display-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../../Global/Fonts/SF-Pro-Display-Semibold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../../Global/Fonts/SF-Pro-Display-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../../Global/Fonts/SF-Pro-Display-Heavy.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+
 /* --- Reset & Global --- */
 * {
     box-sizing: border-box;
@@ -5,7 +47,7 @@
     margin: 0;
     text-decoration: none;
     color: #ffffff;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 :root {
@@ -86,12 +128,12 @@ header .Logo:hover {
 }
 
 header h1 {
-    font-family: 'Playfair Display', serif;
     font-size: 1.8em;
     font-weight: 700;
     letter-spacing: 1px;
     background: linear-gradient(135deg, #ffffff 0%, var(--accent-gold) 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -116,13 +158,13 @@ main {
 }
 
 .hero-content h2 {
-    font-family: 'Playfair Display', serif;
     font-size: 3em;
     font-weight: 800;
     margin-bottom: 0.4em;
     line-height: 1.2;
     background: linear-gradient(135deg, #ffffff 30%, #a78bfa 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -202,7 +244,6 @@ main {
 
 /* --- Bóveda de Signos (Grid) --- */
 .grid-section h3 {
-    font-family: 'Playfair Display', serif;
     font-size: 2em;
     margin-bottom: 1em;
     text-align: center;
@@ -377,7 +418,6 @@ main {
 }
 
 #modalSignName {
-    font-family: 'Playfair Display', serif;
     font-size: 2.2em;
     font-weight: 700;
 }
