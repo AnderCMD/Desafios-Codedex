@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnderCMD | Horóscopo Estelar</title>
+    <link rel="shortcut icon" href="../Global/Icons/Icono-Blanco.ico" type="image/x-icon">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <div class="stars-bg"></div>
+    <div class="twinkling-bg"></div>
+
+    <header>
+        <div class="header-container">
+            <img src="../Global/Logos/Logo-Blanco.png" alt="Logo de AnderCMD" class="Logo">
+            <h1>Horóscopo Estelar</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h2>Descubre tu Destino Astral</h2>
+                <p>Ingresa tu fecha de nacimiento para conocer tu signo zodiacal y leer tu horóscopo detallado en tiempo real, o selecciona directamente un signo de la bóveda celeste.</p>
+            </div>
+
+            <!-- Calculator Form -->
+            <div class="calculator-card">
+                <h3>🔍 Calcular tu Signo</h3>
+                <form id="calcForm" onsubmit="calculateSign(event)">
+                    <div class="form-group">
+                        <label for="Fecha">Fecha de Nacimiento</label>
+                        <input type="date" id="Fecha" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Calcular Signo</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Zodiac Grid -->
+        <section class="grid-section">
+            <h3>✨ Bóveda de Signos</h3>
+            <div class="zodiac-grid" id="zodiacGrid">
+                <div class="zodiac-card" data-sign="Aries" onclick="selectSign('Aries')">
+                    <span class="zodiac-symbol">♈️</span>
+                    <h4>Aries</h4>
+                    <span class="zodiac-date">21 Mar - 20 Abr</span>
+                </div>
+                <div class="zodiac-card" data-sign="Taurus" onclick="selectSign('Taurus')">
+                    <span class="zodiac-symbol">♉️</span>
+                    <h4>Tauro</h4>
+                    <span class="zodiac-date">21 Abr - 20 May</span>
+                </div>
+                <div class="zodiac-card" data-sign="Gemini" onclick="selectSign('Gemini')">
+                    <span class="zodiac-symbol">♊️</span>
+                    <h4>Géminis</h4>
+                    <span class="zodiac-date">21 May - 21 Jun</span>
+                </div>
+                <div class="zodiac-card" data-sign="Cancer" onclick="selectSign('Cancer')">
+                    <span class="zodiac-symbol">♋️</span>
+                    <h4>Cáncer</h4>
+                    <span class="zodiac-date">22 Jun - 22 Jul</span>
+                </div>
+                <div class="zodiac-card" data-sign="Leo" onclick="selectSign('Leo')">
+                    <span class="zodiac-symbol">♌️</span>
+                    <h4>Leo</h4>
+                    <span class="zodiac-date">23 Jul - 22 Ago</span>
+                </div>
+                <div class="zodiac-card" data-sign="Virgo" onclick="selectSign('Virgo')">
+                    <span class="zodiac-symbol">♍️</span>
+                    <h4>Virgo</h4>
+                    <span class="zodiac-date">23 Ago - 22 Sep</span>
+                </div>
+                <div class="zodiac-card" data-sign="Libra" onclick="selectSign('Libra')">
+                    <span class="zodiac-symbol">♎️</span>
+                    <h4>Libra</h4>
+                    <span class="zodiac-date">23 Sep - 22 Oct</span>
+                </div>
+                <div class="zodiac-card" data-sign="Scorpio" onclick="selectSign('Scorpio')">
+                    <span class="zodiac-symbol">♏️</span>
+                    <h4>Escorpio</h4>
+                    <span class="zodiac-date">23 Oct - 22 Nov</span>
+                </div>
+                <div class="zodiac-card" data-sign="Sagittarius" onclick="selectSign('Sagittarius')">
+                    <span class="zodiac-symbol">♐️</span>
+                    <h4>Sagitario</h4>
+                    <span class="zodiac-date">23 Nov - 21 Dic</span>
+                </div>
+                <div class="zodiac-card" data-sign="Capricorn" onclick="selectSign('Capricorn')">
+                    <span class="zodiac-symbol">♑️</span>
+                    <h4>Capricornio</h4>
+                    <span class="zodiac-date">22 Dic - 20 Ene</span>
+                </div>
+                <div class="zodiac-card" data-sign="Aquarius" onclick="selectSign('Aquarius')">
+                    <span class="zodiac-symbol">♒️</span>
+                    <h4>Acuario</h4>
+                    <span class="zodiac-date">21 Ene - 19 Feb</span>
+                </div>
+                <div class="zodiac-card" data-sign="Pisces" onclick="selectSign('Pisces')">
+                    <span class="zodiac-symbol">♓️</span>
+                    <h4>Piscis</h4>
+                    <span class="zodiac-date">20 Feb - 20 Mar</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Horoscope Details Panel / Modal -->
+        <div id="horoscopeModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+                
+                <!-- Loading State -->
+                <div class="loader-container" id="modalLoader">
+                    <div class="nebula-spinner"></div>
+                    <p>Consultando a las estrellas...</p>
+                </div>
+
+                <!-- Main Content (Hidden initially) -->
+                <div id="modalData" class="modal-data hidden">
+                    <div class="modal-header">
+                        <div class="sign-header-info">
+                            <span id="modalSignEmoji" class="modal-emoji"></span>
+                            <div>
+                                <h2 id="modalSignName"></h2>
+                                <p id="modalSignDates" class="sub-text"></p>
+                            </div>
+                        </div>
+                        <div class="date-badge" id="modalHoroscopeDate"></div>
+                    </div>
+
+                    <div class="modal-body-grid">
+                        <!-- Theme & Insights -->
+                        <div class="theme-card card-glow">
+                            <h3>Tema General de Hoy</h3>
+                            <p id="modalThemeText" class="theme-text"></p>
+                        </div>
+
+                        <!-- Lucky Elements -->
+                        <div class="lucky-card card-glow">
+                            <h3>Elementos de la Suerte</h3>
+                            <div class="lucky-grid">
+                                <div class="lucky-item">
+                                    <span class="label">Números</span>
+                                    <span id="luckyNumbers" class="value"></span>
+                                </div>
+                                <div class="lucky-item">
+                                    <span class="label">Colores</span>
+                                    <span id="luckyColors" class="value"></span>
+                                </div>
+                                <div class="lucky-item">
+                                    <span class="label">Piedras</span>
+                                    <span id="luckyStones" class="value"></span>
+                                </div>
+                                <div class="lucky-item">
+                                    <span class="label">Fase Lunar</span>
+                                    <span id="moonPhase" class="value"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Life Areas Predictions -->
+                        <div class="predictions-section">
+                            <h3>Predicciones por Área</h3>
+                            <div class="areas-grid" id="areasGrid">
+                                <!-- Injected dynamically via JS -->
+                            </div>
+                        </div>
+
+                        <!-- Daily Tips -->
+                        <div class="tips-card card-glow">
+                            <h3>Consejos de las Estrellas</h3>
+                            <ul id="modalTipsList" class="tips-list"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Creado con pasión por <b>AnderCMD</b> | <span>© Copyright 2026</span></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./js/horoscope.js"></script>
+</body>
+</html>
