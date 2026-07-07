@@ -1,7 +1,7 @@
 // --- Configuration & Constants ---
 const ASTROLOGY_API_URL = 'https://api.astrology-api.io/api/v3/horoscope/sign/daily';
-// Domain-restricted API Key (safe to use in frontend since it only accepts requests from your domain)
-const ASTROLOGY_API_KEY = 'ask_31a09e9c326729a9858fd82be3c4c3e5c38075fbb3bf93dd1d4d9029db7b2448';
+// Domain-restricted API Key (This key is public)
+const ASTROLOGY_API_KEY = 'ask_43a0a98264c54ec89e422d3bd670127f980076444a983efc62955fee8d1932da';
 
 // User-facing translation mapping for zodiac signs
 const ZODIAC_SIGNS = {
